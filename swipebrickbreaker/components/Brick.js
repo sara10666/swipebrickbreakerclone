@@ -12,7 +12,7 @@ const Brick = ({ brickBottom, round }) => {
             width: brickWidth,
             height: brickHeight,
             bottom: brickBottom,
-            display: round,
+            //display: round,
         }}/>
 
     )   

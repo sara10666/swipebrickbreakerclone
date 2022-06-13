@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import RowOfBricks from './components/RowOfBricks';
-import Bounds from './components/Bounds';
+import Brick from './components/Brick';
+import Ball from './components/Ball';
 export default function App() {
   const screenWidth = Dimensions.get('screen').width
   const screenHeight = Dimensions.get('screen').height
   const gameInProgress = true;
   const groundTouched = false;
-  const round = 0;
+  let round = 0;
   const ground = screenHeight/3
   const [brickBottom, setBrickBottom] = useState(screenHeight - (screenHeight/3));
 
@@ -36,19 +36,24 @@ export default function App() {
     <View style={styles.container}>
       <Brick 
         brickBottom={brickBottom}
-        round={round}
+        //round={round}
       />
       <Ball 
         round={round}
-      />
-      <Bounds 
-        ground={ground}
       />
     </View>
   )
   
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 
 /**
